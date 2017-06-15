@@ -1,5 +1,12 @@
 <?php
 
+$url = parse_url(getenv("DATABASE_URL"));
+
+$host = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$database = substr($url["path"], 1);
+
 return [
 
     /*
@@ -54,10 +61,10 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => 'localhost', //env('DB_HOST', 'localhost'),
-            'database'  => 'laravel', //env('DB_DATABASE', 'forge'),
-            'username'  => 'root', //env('DB_USERNAME', 'forge'),
-            'password'  => '', // env('DB_PASSWORD', ''),
+            'host'      => $host, //env('DB_HOST', 'localhost'),
+            'database'  => $database, //env('DB_DATABASE', 'forge'),
+            'username'  => $username, //env('DB_USERNAME', 'forge'),
+            'password'  => $password, // env('DB_PASSWORD', ''),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
