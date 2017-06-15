@@ -42,6 +42,7 @@
             "php artisan key:generate"
         ],
         "post-install-cmd": [
+            "php artisan migrate",
             "php artisan clear-compiled",
             "php artisan optimize"
         ],
