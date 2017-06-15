@@ -7,8 +7,6 @@ $username = $url["user"];
 $password = $url["pass"];
 $database = substr($url["path"], 1);
 
-print("THE URL IS $url, detected host/username/pass/db like so:\nHOST:\t$host\nUSER:\t$username\nPASS:\t$password\nDB:\t$database");
-
 return [
 
     /*
@@ -76,10 +74,10 @@ return [
 
        'pgsql' => [
             'driver'   => 'pgsql',
-            'host'     => 'localhost', //env('DB_HOST', 'localhost'),
-            'database' => 'betavillegl', //env('DB_DATABASE', 'forge'),
-            'username' => 'postgres', // env('DB_USERNAME', 'forge'),
-            'password' => 'root', //env('DB_PASSWORD', ''),
+            'host'      => $host, //env('DB_HOST', 'localhost'),
+            'database'  => $database, //env('DB_DATABASE', 'forge'),
+            'username'  => $username, //env('DB_USERNAME', 'forge'),
+            'password'  => $password, // env('DB_PASSWORD', ''),
             'charset'  => 'utf8',
             'prefix'   => '',
             'schema'   => 'public',
