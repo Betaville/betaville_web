@@ -7,6 +7,8 @@ $username = $url["user"];
 $password = $url["pass"];
 $database = substr($url["path"], 1);
 
+print("THE URL IS $url, detected host/username/pass/db like so:\nHOST:\t$host\nUSER:\t$username\nPASS:\t$password\nDB:\t$database");
+
 return [
 
     /*
